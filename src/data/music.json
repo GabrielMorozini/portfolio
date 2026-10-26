@@ -1,0 +1,47 @@
+[
+    {
+        "title": "Diamonds and Rust.mp3",
+        "artist": "Judas Priest",
+        "src": "/music/Diamonds-and-Rust.mp3"
+    },
+    {
+        "title": "All my love.mp3",
+        "artist": "Jeff Lynne's ELO",
+        "src": "/music/All-my-love.mp3"
+    },
+    {
+        "title": "Get Lucky",
+        "artist": "Daft Punk",
+        "src": "/music/Get-Lucky.mp3"
+    },
+    {
+        "title": "Last Train To London",
+        "artist": "Electric Light Orchestra",
+        "src": "/music/Last-Train-To-London.mp3"
+    },
+    {
+        "title": "Lovely Day",
+        "artist": "Bill Withers",
+        "src": "/music/Lovely-Day.mp3"
+    },
+    {
+        "title": "Out in the Cold",
+        "artist": "Judas Priest",
+        "src": "/music/Out-in-the-Cold.mp3"
+    },
+    {
+        "title": "Riders On The Storm (Instrumental)",
+        "artist": "The Doors",
+        "src": "/music/Riders-On-The-Storm-(instrumental).mp3"
+    },
+    {
+        "title": "The Night Begins to Shine",
+        "artist": "B.E.R",
+        "src": "/music/The-Night-Begins-to-Shine.mp3"
+    },
+    {
+        "title": "Veridis Quo",
+        "artist": "Daft Punk",
+        "src": "/music/Veridis-Quo.mp3"
+    }
+]
