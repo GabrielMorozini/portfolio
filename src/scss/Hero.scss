@@ -4,32 +4,45 @@
   display: flex;
   position: relative;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   min-height: 100vh;
-  padding: 4rem 8%;
   overflow: hidden;
+  background-color: rgb(15, 15, 20); // mesma cor da seção "Who am i?"
   background-image:
+    // 1) fade inferior: agora cobre a largura toda
+    linear-gradient(to top,
+      rgba(15, 15, 20) 0%,
+      rgba(15, 15, 20, 0.85) 8%,
+      rgba(15, 15, 20, 0.45) 20%,
+      rgba(15, 15, 20, 0) 40%),
+    // 2) escurecimento lateral: continua só sobre a área da imagem
     linear-gradient(90deg,
       rgb(15, 15, 20) 0%,
       rgba(15, 15, 20, 0.389) 45%,
       rgba(15, 15, 20, 0.236) 100%),
+    // 3) imagem
     url('../assets/images/banner.png');
-  background-size: 65%;
-  background-position: 100% center;
-  background-repeat: no-repeat;
+  // um valor para cada camada, na mesma ordem do background-image
+  background-size: 100% 100%, 65% 100%, 65% auto;
+  background-position: center, 100% center, 100% center;
+  background-repeat: no-repeat, no-repeat, no-repeat;
 
   &::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image:
-      linear-gradient(rgba(107, 61, 244, 0.08) 1px,
+      linear-gradient(rgba(107, 61, 244, 0.185) 1px,
         transparent 1px),
       linear-gradient(90deg,
-        rgba(108, 61, 244, 0.08) 1px,
+        rgba(107, 61, 244, 0.185) 1px,
         transparent 1px);
     background-size: 50px 50px;
     pointer-events: none;
+    // o grid desvanece junto com o fade, sem cortar seco na emenda
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
+    mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
   }
 
   &::after {
@@ -38,22 +51,17 @@
     width: 500px;
     height: 500px;
     right: -150px;
-    bottom: -200px;
-    background: rgba(61, 76, 244, 0.2);
+    background: rgba(21, 26, 84, 0.685);
     filter: blur(100px);
     pointer-events: none;
   }
 
-  .song {
-    display: flex;
-    width: 10%;
-  }
-
-  .first-content {
+  .main-content {
     position: relative;
     z-index: 1;
-    max-width: 750px;
-    padding-left: 2rem;
+    left: 4%;
+    max-width: 600px;
+    padding-left: 1.5rem;
     border-left: 2.4px solid $color-primary;
     animation: fadeIn 2s ease forwards;
 
@@ -99,13 +107,65 @@
     }
 
     h4 {
-      max-width: 600px;
+      max-width: 450px;
       margin: 0;
       font-size: clamp(1rem, 1.5vw, 1.3rem);
       font-weight: 400;
       letter-spacing: 0.08em;
       color: $color-text;
       opacity: 0.5;
+    }
+
+    .social {
+      display: flex;
+      flex-direction: row;
+      gap: 40px;
+      width: 100%;
+      height: 100%;
+
+      a {
+        display: flex;
+        width: 100%;
+        height: 100%;
+        justify-content: space-evenly;
+        align-items: center;
+        color: $white;
+        padding: 10px;
+        border-radius: 30px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          transition: all 0.3s ease;
+        }
+
+        &:nth-child(1) {
+          border: 1px solid $white;
+        }
+
+        &:nth-child(1):hover {
+          box-shadow: 0 0 6px $white;
+        }
+
+        &:nth-child(2) {
+          border: 1px solid $color-terciary;
+        }
+
+        &:nth-child(2):hover {
+          box-shadow: 0 0 6px $color-terciary;
+        }
+
+        &:nth-child(3) {
+          border: 1px solid $color-foury;
+        }
+
+        &:nth-child(3):hover {
+          box-shadow: 0 0 6px $color-sixty;
+        }
+
+        img {
+          width: 30px;
+        }
+      }
     }
   }
 

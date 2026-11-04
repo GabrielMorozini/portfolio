@@ -1,0 +1,22 @@
+@use './__variables' as *;
+
+section {
+    display: flex;
+    width: 100%;
+    background: $color-bg;
+    justify-content: center;
+    align-items: center;
+
+    .about-me {
+        max-width: 1000px;
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+
+        h3 {
+            font-size: 2rem;
+            color: $color-terciary;
+        }
+    }
+}

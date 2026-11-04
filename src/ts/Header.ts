@@ -12,9 +12,21 @@ export function useHeader() {
     const currentTrack = ref(0)
     const audio = ref<HTMLAudioElement | null>(null)
 
+    // progresso da música em porcentagem (0 a 100)
+    const progress = ref(0)
+
     // guarda qual faixa já está carregada no <audio>,
     // para não reiniciar a música ao dar pause/play
     let loadedTrack = -1
+
+    const updateProgress = () => {
+        const element = audio.value
+
+        progress.value =
+            element && element.duration
+                ? (element.currentTime / element.duration) * 100
+                : 0
+    }
 
     const playMusic = async () => {
         const element = audio.value
@@ -26,6 +38,7 @@ export function useHeader() {
         if (loadedTrack !== currentTrack.value) {
             element.src = track.src
             loadedTrack = currentTrack.value
+            progress.value = 0 // nova faixa começa do zero
         }
 
         try {
@@ -68,8 +81,10 @@ export function useHeader() {
         currentTrack,
         isPlaying,
         audio,
+        progress,
         toggleMusic,
         nextTrack,
-        previousTrack
+        previousTrack,
+        updateProgress
     }
 }

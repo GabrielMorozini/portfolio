@@ -1,6 +1,6 @@
 <template>
     <section class="banner">
-        <article class="first-content">
+        <article class="main-content">
 
             <p class="eyebrow">
                 // FULL STACK DEVELOPER
@@ -14,7 +14,17 @@
                 <h4>
                     Full Stack Developer, Beginner Game Developer, and Cybersecurity Learner
                 </h4>
-                <h4>"I never say anything, I always doubt and then I question myself"</h4>
+                <article class="social">
+                    <a href="https://github.com/GabrielMorozini" target="_blank">
+                        <img src="../assets/images/github.svg" alt="">Github
+                    </a>
+                    <a href="https://www.linkedin.com/in/gabriel-morozini-2aa28b251" target="_blank">
+                        <img src="../assets/images/linkedin-teste.svg" alt="">Linkedin
+                    </a>
+                    <a href="https://www.instagram.com/dev_morozini/" target="_blank">
+                        <img src="../assets/images/instagram.svg" alt="">Instagram
+                    </a>
+                </article>
             </article>
         </article>
     </section>
