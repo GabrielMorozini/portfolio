@@ -67,7 +67,7 @@
 
     .eyebrow {
       margin-bottom: 1rem;
-      color: $color-terciary;
+      color: $color-tertiary;
       font-size: 0.8rem;
       font-weight: 700;
       letter-spacing: 0.3em;
@@ -107,6 +107,7 @@
     }
 
     h4 {
+      position: relative; // referência para o .typed ficar por cima do .ghost
       max-width: 450px;
       margin: 0;
       font-size: clamp(1rem, 1.5vw, 1.3rem);
@@ -114,12 +115,37 @@
       letter-spacing: 0.08em;
       color: $color-text;
       opacity: 0.5;
+
+      // Efeito de digitação
+      // Texto completo invisível: só reserva o espaço e evita o layout pular
+      .ghost {
+        visibility: hidden;
+      }
+
+      // Texto digitado fica por cima, na mesma posição
+      .typed {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+      }
+
+      .cursor {
+        display: inline-block;
+        width: 2px;
+        height: 1em;
+        margin-left: 4px;
+        background: currentColor; // troque por uma cor sua, ex.: $color-tertiary
+        vertical-align: text-bottom;
+        animation: blink 1s steps(1) infinite;
+      }
     }
 
     .social {
       display: flex;
       flex-direction: row;
       gap: 40px;
+      margin-top: 65px;
       width: 100%;
       height: 100%;
 
@@ -147,19 +173,19 @@
         }
 
         &:nth-child(2) {
-          border: 1px solid $color-terciary;
+          border: 1px solid $color-tertiary;
         }
 
         &:nth-child(2):hover {
-          box-shadow: 0 0 6px $color-terciary;
+          box-shadow: 0 0 6px $color-tertiary;
         }
 
         &:nth-child(3) {
-          border: 1px solid $color-foury;
+          border: 1px solid $color-quaternary;
         }
 
         &:nth-child(3):hover {
-          box-shadow: 0 0 6px $color-sixty;
+          box-shadow: 0 0 6px $color-Senary;
         }
 
         img {
@@ -170,7 +196,7 @@
   }
 
   .tech-line {
-    background: $color-terciary;
+    background: $color-tertiary;
   }
 }
 
@@ -183,5 +209,11 @@
   to {
     opacity: 1;
     transform: translateX(0);
+  }
+}
+
+@keyframes blink {
+  50% {
+    opacity: 0;
   }
 }

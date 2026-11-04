@@ -11,8 +11,8 @@
             <h2>Morozini</h2>
 
             <article>
-                <h4>
-                    Full Stack Developer, Beginner Game Developer, and Cybersecurity Learner
+                <h4 class="typewriter" :aria-label="fullText">
+                    <span class="typed" aria-hidden="true">{{ typedText }}<span class="cursor"></span></span>
                 </h4>
                 <article class="social">
                     <a href="https://github.com/GabrielMorozini" target="_blank">
@@ -30,7 +30,6 @@
     </section>
 </template>
 
-<script setup lang="ts">
-</script>
+<script lang="ts" src="../ts/Hero.ts"></script>
 
 <style lang="scss" src="../scss/Hero.scss"></style>
