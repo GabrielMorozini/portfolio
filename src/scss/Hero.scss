@@ -8,22 +8,18 @@
   width: 100%;
   min-height: 100vh;
   overflow: hidden;
-  background-color: rgb(15, 15, 20); // mesma cor da seção "Who am i?"
+  background-color: rgb(15, 15, 20);
   background-image:
-    // 1) fade inferior: agora cobre a largura toda
     linear-gradient(to top,
       rgba(15, 15, 20) 0%,
       rgba(15, 15, 20, 0.85) 8%,
       rgba(15, 15, 20, 0.45) 20%,
       rgba(15, 15, 20, 0) 40%),
-    // 2) escurecimento lateral: continua só sobre a área da imagem
     linear-gradient(90deg,
       rgb(15, 15, 20) 0%,
       rgba(15, 15, 20, 0.389) 45%,
       rgba(15, 15, 20, 0.236) 100%),
-    // 3) imagem
     url('../assets/images/banner.png');
-  // um valor para cada camada, na mesma ordem do background-image
   background-size: 100% 100%, 65% 100%, 65% auto;
   background-position: center, 100% center, 100% center;
   background-repeat: no-repeat, no-repeat, no-repeat;
@@ -40,7 +36,6 @@
         transparent 1px);
     background-size: 50px 50px;
     pointer-events: none;
-    // o grid desvanece junto com o fade, sem cortar seco na emenda
     -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
     mask-image: linear-gradient(to bottom, #000 55%, transparent 100%);
   }
@@ -107,7 +102,7 @@
     }
 
     h4 {
-      position: relative; // referência para o .typed ficar por cima do .ghost
+      position: relative;
       max-width: 450px;
       margin: 0;
       font-size: clamp(1rem, 1.5vw, 1.3rem);
@@ -116,13 +111,10 @@
       color: $color-text;
       opacity: 0.5;
 
-      // Efeito de digitação
-      // Texto completo invisível: só reserva o espaço e evita o layout pular
       .ghost {
         visibility: hidden;
       }
 
-      // Texto digitado fica por cima, na mesma posição
       .typed {
         position: absolute;
         top: 0;
@@ -135,7 +127,7 @@
         width: 2px;
         height: 1em;
         margin-left: 4px;
-        background: currentColor; // troque por uma cor sua, ex.: $color-tertiary
+        background: currentColor;
         vertical-align: text-bottom;
         animation: blink 1s steps(1) infinite;
       }
@@ -181,7 +173,7 @@
         }
 
         &:nth-child(3) {
-          border: 1px solid $color-quaternary;
+          border: 1px solid $color-Senary;
         }
 
         &:nth-child(3):hover {
